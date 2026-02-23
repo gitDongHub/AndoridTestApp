@@ -2,5 +2,9 @@
   {
     "title": "Information",
     "activityClass": "com.demo.androidtest.feature.systeminfo.SystemInfoActivity"
+  },
+  {
+    "title": "SettingsMonitor",
+    "activityClass": "com.demo.androidtest.feature.settings.SettingsMonitorActivity"
   }
 ]

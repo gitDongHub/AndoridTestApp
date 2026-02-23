@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.demo.androidtest">
-    <!-- 网络权限（测试项2需要） -->
+    <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!-- 后台运行权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <!-- 兼容低版本获取前台应用 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <application
         android:allowBackup="true"
@@ -12,12 +18,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTest">
         <activity
+            android:name=".feature.settings.SettingsMonitorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings_monitor"
+            android:theme="@style/Theme.AndroidTest" />
+
+        <service
+            android:name=".feature.settings.SettingsMonitorService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
             android:name=".feature.systeminfo.SystemInfoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
